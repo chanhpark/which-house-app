@@ -1,0 +1,13 @@
+<h1> New Houses </h1>
+
+<% if @houses.errors.any? %>
+  <h2> Error! </h2>
+  <ul>
+  <% @houses.errors.full_messages.each do |error_msg| %>
+  <li>
+    <%= error_msg %>
+  </li>
+
+  <% end %>
+  </ul>
+<% end %>
