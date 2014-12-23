@@ -10,6 +10,11 @@ class HousesController < ApplicationController
     @houses = House.new(house_params)
   end
 
+  def import
+    House.import(params[:file])
+    redirect_to houses_path, notice: "Houses added Successfully"
+  end
+
   private
 
   def house_params
