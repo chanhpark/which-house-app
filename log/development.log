@@ -584,3 +584,725 @@ DETAIL:  Failing row contains (2, null, null, null, null, null, null, 2014-12-23
   Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
   Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
   Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2014-12-23 15:38:13 -0500
+Processing by HousesController#index as HTML
+  Rendered houses/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 62ms (Views: 61.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-23 15:38:14 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:14 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:14 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:14 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:14 -0500
+
+
+Started GET "/houses/new" for 127.0.0.1 at 2014-12-23 15:38:16 -0500
+Processing by HousesController#new as HTML
+  Rendered houses/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-23 15:38:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-23 15:38:16 -0500
+
+
+Started POST "/houses/import" for 127.0.0.1 at 2014-12-23 15:38:26 -0500
+Processing by HousesController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1BWmFyF60KWXOUIhbHI/97dMojDj1lwH3UNk5gu4gD0=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007ffd4de619a8 @tempfile=#<Tempfile:/var/folders/69/9bknvtq94nlgrrt1zhbh5gz00000gn/T/RackMultipart20141223-63710-oqtqfl>, @original_filename="Book1.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Book1.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Upload Houses"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-12-23 20:38:26.076857"], ["updated_at", "2014-12-23 20:38:26.076857"]]
+PG::NotNullViolation: ERROR:  null value in column "address" violates not-null constraint
+DETAIL:  Failing row contains (3, null, null, null, null, null, null, 2014-12-23 20:38:26.076857, 2014-12-23 20:38:26.076857).
+: INSERT INTO "houses" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "address" violates not-null constraint
+DETAIL:  Failing row contains (3, null, null, null, null, null, null, 2014-12-23 20:38:26.076857, 2014-12-23 20:38:26.076857).
+: INSERT INTO "houses" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"):
+  app/models/house.rb:4:in `block in import'
+  app/models/house.rb:3:in `import'
+  app/controllers/houses_controller.rb:14:in `import'
+
+
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+
+
+Started POST "/houses/import" for 127.0.0.1 at 2014-12-23 15:38:57 -0500
+Processing by HousesController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1BWmFyF60KWXOUIhbHI/97dMojDj1lwH3UNk5gu4gD0=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007ffd4dc296b8 @tempfile=#<Tempfile:/var/folders/69/9bknvtq94nlgrrt1zhbh5gz00000gn/T/RackMultipart20141223-63710-1czg39a>, @original_filename="Book1.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Book1.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Upload Houses"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "houses" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-12-23 20:38:57.985718"], ["updated_at", "2014-12-23 20:38:57.985718"]]
+PG::NotNullViolation: ERROR:  null value in column "address" violates not-null constraint
+DETAIL:  Failing row contains (4, null, null, null, null, null, null, 2014-12-23 20:38:57.985718, 2014-12-23 20:38:57.985718).
+: INSERT INTO "houses" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 23ms
+
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "address" violates not-null constraint
+DETAIL:  Failing row contains (4, null, null, null, null, null, null, 2014-12-23 20:38:57.985718, 2014-12-23 20:38:57.985718).
+: INSERT INTO "houses" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"):
+  app/models/house.rb:4:in `block in import'
+  app/models/house.rb:3:in `import'
+  app/controllers/houses_controller.rb:14:in `import'
+
+
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.2ms)
+
+
+Started GET "/houses/new" for 127.0.0.1 at 2014-12-23 15:39:30 -0500
+Processing by HousesController#new as HTML
+  Rendered houses/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-23 15:39:31 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:31 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:31 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:31 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:31 -0500
+
+
+Started POST "/houses/import" for 127.0.0.1 at 2014-12-23 15:39:36 -0500
+Processing by HousesController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1BWmFyF60KWXOUIhbHI/97dMojDj1lwH3UNk5gu4gD0=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007ffd4dc23858 @tempfile=#<Tempfile:/var/folders/69/9bknvtq94nlgrrt1zhbh5gz00000gn/T/RackMultipart20141223-63710-bb6xvm>, @original_filename="Book1.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Book1.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Upload Houses"}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/models/house.rb:4:in `block in import'
+  app/models/house.rb:3:in `import'
+  app/controllers/houses_controller.rb:14:in `import'
+
+
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/cxp/.gem/ruby/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/houses/import" for 127.0.0.1 at 2014-12-23 15:39:50 -0500
+Processing by HousesController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1BWmFyF60KWXOUIhbHI/97dMojDj1lwH3UNk5gu4gD0=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007ffd4deca138 @tempfile=#<Tempfile:/var/folders/69/9bknvtq94nlgrrt1zhbh5gz00000gn/T/RackMultipart20141223-63710-1s6ixf3>, @original_filename="Book1.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Book1.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Upload Houses"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Bowdoin St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.505817"], ["price", "$2,225/mo"], ["size", "1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.505817"], ["zipcode", "02108"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "3 Winter Pl # 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.508961"], ["price", "$1,825 "], ["size", " 2 beds / 3 baths / 2,250 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.508961"], ["zipcode", "02108"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "1A Joy St UNIT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.510746"], ["price", "$5,850/mo"], ["size", " 2 beds / 3.5 baths / 1,626 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.510746"], ["zipcode", "02108"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "14 Chestnut St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.512535"], ["price", "$6,895 "], ["size", " 8 beds / 6 baths / 7,308 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.512535"], ["zipcode", "02108"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "1 Winter Pl # 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.514500"], ["price", "$10,000/mo"], ["size", "2 beds / 3 baths / 3,435 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.514500"], ["zipcode", "02108"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "41 Chestnut St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.516813"], ["price", "$4,295,000 "], ["size", "5 beds / 5 baths / 4, 027 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.516813"], ["zipcode", "02108"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "1 Winter Pl # 4"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.518457"], ["price", "$3,000,000 "], ["size", " 2 beds / 3 baths / 3,323 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.518457"], ["zipcode", "02108"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "48 Beacon St APT 1R"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.520047"], ["price", "$1,249,000 "], ["size", " 2 beds / 1.5 baths / 1, 448 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.520047"], ["zipcode", "02108"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Beacon St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.522922"], ["price", "$2,800/mo"], ["size", " 1 bed / 1 bath / 508 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.522922"], ["zipcode", "02108"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Mount Vernon St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.524813"], ["price", "$2,800/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.524813"], ["zipcode", "02108"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "9 Park St # 46"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.527002"], ["price", "$9,500/mo"], ["size", " 3 beds / 2 baths "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.527002"], ["zipcode", "02108"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Bowdoin St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.528991"], ["price", "$2,225/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.528991"], ["zipcode", "02108"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "15 River St APT 401"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.531179"], ["price", "$729,000 "], ["size", " 2 beds / 2 baths / 778 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.531179"], ["zipcode", "02108"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "89 Beacon St APT 5"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.533109"], ["price", "$3,600/mo"], ["size", " 2 beds / 2 baths / 1,100 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.533109"], ["zipcode", "02108"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Temple St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.535359"], ["price", "$3,100/mo"], ["size", " 2 beds / 2 baths / 1,185 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.535359"], ["zipcode", "02108"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "River Street Pl"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.537428"], ["price", "$2,400/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.537428"], ["zipcode", "02108"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "River St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.540477"], ["price", "$3,150/mo"], ["size", " 2 beds / 1 bath / 700 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.540477"], ["zipcode", "02108"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "8 Winter St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.542552"], ["price", "$3,690/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.542552"], ["zipcode", "02108"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "22 River St # 22G"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.544085"], ["price", "$3,400/mo"], ["size", " 2 beds / 1 bath / 800 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.544085"], ["zipcode", "02108"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "343 Commercial St UNIT 301"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.545605"], ["price", "$1,299,000 "], ["size", " 2 beds / 2 baths / 1,340 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.545605"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "4 Battery Wharf # 4607"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.547210"], ["price", "$1,995,000 "], ["size", " 2 beds / 2 baths / 1,397 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.547210"], ["zipcode", "02109"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "39-41 Salutation # 2B"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.548675"], ["price", "$2,850/mo"], ["size", " 2 beds / 1.5 baths / 876 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.548675"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "108 Fulton St UNIT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.550200"], ["price", "$3,800/mo"], ["size", " 2 beds / 2 baths / 1,236 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.550200"], ["zipcode", "02109"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "357 Commercial St APT 208"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.551568"], ["price", "$649,000 "], ["size", " 1 bed / 1 bath / 671 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.551568"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "50 Battery St PH 4"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.553028"], ["price", "$2,590,000 "], ["size", " 3 beds / 4 baths / 2,391 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.553028"], ["zipcode", "02109"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "300 Commercial St APT 710"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.556088"], ["price", "$2,599,000 "], ["size", " 2 beds / 2 baths / 3,654 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.556088"], ["zipcode", "02109"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Commercial St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.558280"], ["price", "$2,675/mo"], ["size", " 1 bed / 1 bath / 700 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.558280"], ["zipcode", "02109"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "37 Fleet St APT 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.559981"], ["price", "$649,000 "], ["size", " 2 beds / 2 baths / 1,185 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.559981"], ["zipcode", "02109"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "158 Commercial St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.561905"], ["price", "$2,200/mo"], ["size", " 2 beds / 1 bath / 773 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.561905"], ["zipcode", "02109"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "155 Commercial St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.563979"], ["price", "3,200/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.563979"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Foster St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.565529"], ["price", "$2,400/mo"], ["size", " 2 beds / 1 bath / 650 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.565529"], ["zipcode", "02109"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Commercial St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.567009"], ["price", "$2,800/mo"], ["size", " 1 bed / 1 bath / 875 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.567009"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Commercial St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.568648"], ["price", "$2,650/mo"], ["size", " 2 beds / 1 bath / 900 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.568648"], ["zipcode", "02109"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Battery St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.570532"], ["price", "$2,250/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.570532"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Devonshire St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.573514"], ["price", "$2,710/moo"], ["size", " 1 bed / 1 bath / 800 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.573514"], ["zipcode", "02109"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Devonshire St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.575258"], ["price", "$3,735/mo"], ["size", " 2 beds / 2 baths / 1,300 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.575258"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Devonshire St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.576823"], ["price", "$3,010/mo"], ["size", " 1 bed / 1 bath / 770 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.576823"], ["zipcode", "02109"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Devonshire St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.578451"], ["price", "$3,020/mo"], ["size", " 1 bed / 1 bath / 700 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.578451"], ["zipcode", "02109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "40 Commercial Wharf UNIT 40"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.580115"], ["price", "$5,500/mo"], ["size", " 1 bed / 2.5 baths / 1,133 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.580115"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "59 Commercial Wharf APT 5"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.581629"], ["price", "$985,000 "], ["size", " 1 bed / 1.5 baths / 1,172 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.581629"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "65 E India Row APT 23B"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.583188"], ["price", "$1,199,000.00 "], ["size", " 2 beds / 3 baths / 1,630 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.583188"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "80 Broad St UNIT 308"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.584892"], ["price", "$560,000 "], ["size", " 1 bed / 1 bath / 708 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.584892"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "65 E India Row # 30FG"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.586611"], ["price", "$1,999,000 "], ["size", " 3 beds / 5 baths / 2,854 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.586611"], ["zipcode", "02110"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "80 Broad St # 2110"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.589500"], ["price", "$659,000 "], ["size", " 1 bed / 1 bath / 836 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.589500"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "289 Devonshire St FL 5"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.591197"], ["price", "$1,125,000 "], ["size", " 1 bed / 2 baths / 1, 564 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.591197"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "E India Row"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.592730"], ["price", "$3,500/mo"], ["size", " 2 beds / 2 baths / 1,200 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.592730"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "65 E India Row APT 27H"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.594200"], ["price", "$635,000 "], ["size", " 1 bed / 1 bath / 875 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.594200"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Arch St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.596093"], ["price", "$1,950/mo"], ["size", " Studio / 1 bath / 400 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.596093"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Pearl St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.598473"], ["price", "$3850/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.598473"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Arch St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.600855"], ["price", "$2,100/mo"], ["size", " 1 bed / 1 bath / 425 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.600855"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Broad St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.603155"], ["price", "$4,000/mo"], ["size", " 2 beds / 2 baths / 1,282 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.603155"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "E India Row"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.605319"], ["price", "$5,600/mo"], ["size", " 2 beds / 2 baths / 1,640 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.605319"], ["zipcode", "02110"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Arch St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.608789"], ["price", "$2,050/mo"], ["size", " Studio / 1 bath / 550 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.608789"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Arch St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.611780"], ["price", "$1,850/mo"], ["size", " Studio / 1 bath /350 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.611780"], ["zipcode", "02110"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Arch St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.617605"], ["price", "$1,750/mo"], ["size", " Studio / 1 bath / 540 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.617605"], ["zipcode", "02110"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Pearl St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.624105"], ["price", "$3,775/mo"], ["size", " 2 beds / 2.5 baths "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.624105"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "65 Commercial Wharf APT 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.626213"], ["price", "$2,550,000 "], ["size", " 3 beds / 2 baths / 1,943 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.626213"], ["zipcode", "02110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "85 E India Row APT 10G"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.627914"], ["price", "$950,000 "], ["size", " 2 beds / 2 baths / 1, 215 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.627914"], ["zipcode", "02110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "E India Row"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.629720"], ["price", "$4,000/mo"], ["size", " 2 beds / 2.5 baths / 1, 632 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.629720"], ["zipcode", "02110"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Essex St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.631405"], ["price", "$1,750/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.631405"], ["zipcode", "02111"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "1 Nassau St UNIT 2206"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.633132"], ["price", "$1,699,000 "], ["size", " 2 beds / 2.5 baths / 1, 805 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.633132"], ["zipcode", "02111"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "170 Tremont St APT 1804"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.635511"], ["price", "$1,740,000 "], ["size", " 2 beds / 2 baths / 1,171 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.635511"], ["zipcode", "02111"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "2 Avery St APT 35A"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.637721"], ["price", "$1,250,000 "], ["size", " 1 bed / 1.5 baths / 803 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.637721"], ["zipcode", "02111"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "1 Avery St APT 22A"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.642850"], ["price", "$2,379,000 "], ["size", " 3 beds / 3.5 baths / 2,242 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.642850"], ["zipcode", "02111"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "151 Tremont St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.647093"], ["price", "$2,400/mo"], ["size", " Studio/ 1 bath / 590 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.647093"], ["zipcode", "02111"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "151 Tremont St APT 10C"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.650238"], ["price", "$539,000 "], ["size", " 1 bed / 1.5 baths / 735 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.650238"], ["zipcode", "02111"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "51 Beach St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.652587"], ["price", "$2,650/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.652587"], ["zipcode", "02111"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "151 Tremont St APT 8U"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.654617"], ["price", "$2,800/mo"], ["size", " 1 bed / 1 bath / 740 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.654617"], ["zipcode", "02111"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "40-42 Beach St UNIT 5C"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.656500"], ["price", "$2,600/mo"], ["size", " 1 bed / 1 bath / 756 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.656500"], ["zipcode", "02111"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Tyler St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.658794"], ["price", "$1,795/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.658794"], ["zipcode", "02111"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Washington St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.700797"], ["price", "$3,395/mo"], ["size", " 1 bed / 1 bath / 715 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.700797"], ["zipcode", "02111"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "9 Harrison Ave"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.702703"], ["price", "$2,200/mo"], ["size", " 1 bed / 1 bath / 510 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.702703"], ["zipcode", "02111"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "371 Hanover St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.704229"], ["price", "$499,000 "], ["size", " 1 bed / 1 bath / 680 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.704229"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "177 Endicott St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.705751"], ["price", "$549,900 "], ["size", " 2 beds / 1 bath / 715 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.705751"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "7 Stillman Pl UNIT 10"], ["city", " BOSTON"], ["created_at", "2014-12-23 20:39:50.707429"], ["price", "$3,000/mo"], ["size", " 2 beds / 1 bath / 746 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.707429"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Stillman St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.709041"], ["price", "$2,850/mo"], ["size", " 1 bed / 1 bath / 600 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.709041"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "46 Lewis St APT 7"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.710470"], ["price", "$389,900 "], ["size", " 1 bed / 1 bath / 407 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.710470"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "160 Salem St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.711983"], ["price", "$895,500 "], ["size", " 3 beds / 2 baths / 1,512 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.711983"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "5 Fleet St # 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.713586"], ["price", "$1,625/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.713586"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "22 Moon St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.715041"], ["price", "$2,550,000 "], ["size", " 2 beds / 1 bath / 4,658 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.715041"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "92 Endicott St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.716520"], ["price", "$4,000/mo"], ["size", " 3 beds / 1 bath / 800 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.716520"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "N Washington St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.717990"], ["price", "$5,400/mo"], ["size", " 3 beds / 2 baths / 2,215 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.717990"], ["zipcode", "02113"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "371 Hanover St APT 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.719440"], ["price", "$500,000 "], ["size", " 1 bed / 1 bath / 680 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.719440"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "343 North St # 12"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.721136"], ["price", "$1,750/mo"], ["size", " Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.721136"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "16 Charter St # 6"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.722796"], ["price", "$1,650/mo"], ["size", "Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.722796"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Charter St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.724278"], ["price", "$1,650/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.724278"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "419 Hanover St APT 7"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.725753"], ["price", "$2,850/mo"], ["size", " 2 beds / 1 bath / 700 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.725753"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "2 Baldwin Pl # 4L"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.727321"], ["price", "$1,950/mo"], ["size", " 1 bed / 1 bath / 600 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.727321"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Charter St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.728860"], ["price", "$1,650/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.728860"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "163 Endicott St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.730473"], ["price", "$3,100/mo"], ["size", " 2 beds / 1 bath / 950 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.730473"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "20 Parmenter St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.731948"], ["price", "$3,800/mo"], ["size", " 2 beds / 2 baths / 1,344 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.731948"], ["zipcode", "02113"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "33 Sheafe St APT 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.733413"], ["price", "$1,600/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.733413"], ["zipcode", "02113"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "35 Mount Vernon St UNIT 4"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.734934"], ["price", "$599,000 "], ["size", " 1 bed / 1 bath / 709 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.734934"], ["zipcode", "02108"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "36 Myrtle St APT 7"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.736514"], ["price", "$539,000 "], ["size", " 2 beds / 1 bath / 657 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.736514"], ["zipcode", "02114"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "11 Irving St APT 6"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.737965"], ["price", "$2,300/mo"], ["size", " 1 bed / 1 bath / 426 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.737965"], ["zipcode", "02114"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "10 Bowdoin St UNIT 314"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.739483"], ["price", "$695,000 "], ["size", " 1 bed / 1 bath / 766 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.739483"], ["zipcode", "02114"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "45 Myrtle St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.740949"], ["price", "$3,200/mo"], ["size", " 2 beds / 1 bath / 864 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.740949"], ["zipcode", "02114"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Bowdoin St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.742388"], ["price", "$2,300/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.742388"], ["zipcode", "02114"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "N Anderson St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.743929"], ["price", "$1,600/mo"], ["size", " Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.743929"], ["zipcode", "02114"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Bowdoin St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.745304"], ["price", "$2,600/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.745304"], ["zipcode", "02114"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "94 Charles St # 5J"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.746870"], ["price", "$3,500/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.746870"], ["zipcode", "02114"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Anderson St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.748413"], ["price", "$1,900/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.748413"], ["zipcode", "02114"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "7 Staniford St # 8E"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.749929"], ["price", "$1,850/mo"], ["size", " Studio / 1 bath / 610 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.749929"], ["zipcode", "02114"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "9 Grove St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.751421"], ["price", "$3,660/mo"], ["size", " 3 beds / 2 baths "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.751421"], ["zipcode", "02114"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "41 N Anderson St # 22"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.752750"], ["price", "$1,650/mo"], ["size", " Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.752750"], ["zipcode", "02114"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Saint Botolph St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.754465"], ["price", "$1,750/mo"], ["size", " 1 bed / 1 bath / 700 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.754465"], ["zipcode", "02115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "297 Commonwealth Ave APT 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.756151"], ["price", "$4,750,000 "], ["size", " 2 beds / 2.5 baths / 3,080 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.756151"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "341 Marlborough St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.757662"], ["price", "$4,775,000 "], ["size", " 3 beds / 3.5 baths / 2,860 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.757662"], ["zipcode", "02115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Saint Botolph St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.759112"], ["price", "$1,775/mo"], ["size", " Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.759112"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "6 Gloucester St APT 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.760540"], ["price", "$629,000 "], ["size", " 1 bed / 1 bath / 830 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.760540"], ["zipcode", "02115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Blackwood St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.762050"], ["price", "$1,675/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.762050"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Commonwealth Ave"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.763575"], ["price", "$1,575/mo"], ["size", " Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.763575"], ["zipcode", "02115"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Riverway"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.764957"], ["price", "$2,800/mo"], ["size", " 3 beds / 1 bath / 1,307 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.764957"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "409 Marlborough St APT 36"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.766504"], ["price", "$1,550/mo"], ["size", " Studio/ 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.766504"], ["zipcode", "02115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "294 Newbury St UNIT 2B"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.767972"], ["price", "$7,150/mo"], ["size", " 2 beds / 2 baths / 1,539 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.767972"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Cumberland St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.769839"], ["price", "$2,100/mo"], ["size", " Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.769839"], ["zipcode", "02115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "109 Saint Stephen St # B25"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.771714"], ["price", "$3,100/mo"], ["size", " 3 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.771714"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Symphony Rd"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.773260"], ["price", "$3,900/mo"], ["size", " 3 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.773260"], ["zipcode", "02115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Fenway"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.774718"], ["price", "$3,100/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.774718"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Huntington Ave"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.776263"], ["price", "$1,800/mo"], ["size", " Studio / 1 bath"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.776263"], ["zipcode", "02115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Hemenway St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.777781"], ["price", "$4,000/mo"], ["size", " 3 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.777781"], ["zipcode", "02115"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Fenway"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.779219"], ["price", "$5,200/mo"], ["size", " 4 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.779219"], ["zipcode", "02115"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "135 Clarendon St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.780625"], ["price", "$6160/mo"], ["size", " 2 beds / 2 baths "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.780625"], ["zipcode", "02116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "160 Commonwealth Ave # 402"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.782014"], ["price", "1,999,000"], ["size", " 2 beds / 2.5 baths / 1,624 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.782014"], ["zipcode", "02116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "18 Piedmont St # 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.783486"], ["price", "$6,500/mo"], ["size", " 2 beds / 2 baths / 2,100 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.783486"], ["zipcode", "02116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "30 Fayette St # 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.784967"], ["price", "$1,900/mo"], ["size", " Studio / 1 bath / 575 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.784967"], ["zipcode", "02116"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "1 Marlborough St APT 4"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.786361"], ["price", "$6,700/mo"], ["size", " 2 beds / 2 baths / 1,225 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.786361"], ["zipcode", "02116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "9 Harcourt St APT 302"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.787836"], ["price", "$1,890,000 "], ["size", " 2 beds / 2 baths / 1,081 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.787836"], ["zipcode", "02116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "123 Commonwealth Ave APT 5"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.789273"], ["price", "$2,150/mo"], ["size", " Studio / 1 bath / 450 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.789273"], ["zipcode", "02116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "142 Marlborough St # 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.790733"], ["price", "$3,500/mo"], ["size", " 1 bed / 1 bath / 900 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.790733"], ["zipcode", "02116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "50 Commonwealth Ave APT 701"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.792222"], ["price", "$4,800/mo"], ["size", " 2 beds / 2 baths / 1,250 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.792222"], ["zipcode", "02116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Huntington Ave"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.793701"], ["price", "$4,500/mo"], ["size", " 1 bed / 1.5 baths / 900 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.793701"], ["zipcode", "02116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "285 Columbus Ave UNIT 602"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.795158"], ["price", "$995,000 "], ["size", " 2 beds / 2 baths / 1,131 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.795158"], ["zipcode", "02116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "1 Charles St S UNIT PH103"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.796617"], ["price", "$3,195,000 "], ["size", " 2 beds / 3 baths / 1,866 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.796617"], ["zipcode", "02116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "257 Commonwealth Ave APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.798043"], ["price", "$4,500/mo"], ["size", " 2 beds / 2 baths / 1,425 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.798043"], ["zipcode", "02116"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "136 Beacon St APT 9"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.799582"], ["price", "$2,775,000 "], ["size", " 3 beds / 2 baths / 2,210 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.799582"], ["zipcode", "02116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "W Newton St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.801177"], ["price", "$2,100/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.801177"], ["zipcode", "02116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "114 Union Park St # 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.802647"], ["price", "$2,700/mo"], ["size", " 2 beds / 1 bath / 1,000 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.802647"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "83 W Brookline St # 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.804407"], ["price", "$3,200/mo"], ["size", " 2 beds / 1.5 baths / 1,135 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.804407"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "682 Tremont St # 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.806041"], ["price", "$724,000 "], ["size", " 2 beds / 1 bath / 785 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.806041"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "5 Rutland Sq"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.807627"], ["price", "$3,300,000 "], ["size", " 4 beds / 4 baths / 4,250 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.807627"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Columbus Ave"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.809366"], ["price", "$3,050/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.809366"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "748 Tremont St APT 3"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.810894"], ["price", "$595,000 "], ["size", " 1 bed / 1 bath / 890 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.810894"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "66 Waltham St APT 44"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.812466"], ["price", "$725,000 "], ["size", " 2 beds / 1 bath / 943 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.812466"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "38 Upton St # 4"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.813961"], ["price", "$1,995,000 "], ["size", " 3 beds / 2.5 baths / 1,784 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.813961"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "81 E Brookline St APT 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.815387"], ["price", "$1,600/mo"], ["size", " 1 bed / 1 bath / 469 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.815387"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "25 E Springfield St UNIT 3"], ["city", " Roxbury"], ["created_at", "2014-12-23 20:39:50.816801"], ["price", "$895,000 "], ["size", " 2 beds / 2 baths / 1,300 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.816801"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "474 Shawmut Ave APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.818328"], ["price", "$649,000 "], ["size", " 2 beds / 1 bath / 873 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.818328"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "45 Bradford St # 45"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.819795"], ["price", "$1,575,000 "], ["size", " 3 beds / 3 baths / 1,750 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.819795"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "1750-1752 Washington St UNIT 4"], ["city", " BOSTON"], ["created_at", "2014-12-23 20:39:50.821270"], ["price", "$2450/mo"], ["size", " 2 beds / 1 bath / 700 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.821270"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "34 Plympton St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.822666"], ["price", "$2,300,000 "], ["size", " 7 beds / 4 baths / 6,200 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.822666"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "254 Shawmut Ave # 254"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.824197"], ["price", "$2,995,000 "], ["size", " 4 beds / 3 baths / 3,100 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.824197"], ["zipcode", "02118"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "182 W Brookline St APT 1"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.825863"], ["price", "$3,275/mo"], ["size", " 3 beds / 2 baths / 1,600 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.825863"], ["zipcode", "02118"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "E Berkeley St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.827724"], ["price", "$2,850/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.827724"], ["zipcode", "02118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "3003 Washington St APT 2"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.829409"], ["price", "$1,400/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.829409"], ["zipcode", "02119"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Centre St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.831023"], ["price", "$2,300/mo"], ["size", " 3 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.831023"], ["zipcode", "02119"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Kenilworth St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.832517"], ["price", "$1,600/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.832517"], ["zipcode", "02119"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Marcella St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.833933"], ["price", "$1,350/mo"], ["size", " 1 bed / 1 bath / 1,200 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.833933"], ["zipcode", "02119"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Centre St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.835463"], ["price", "$1,950/mo"], ["size", " 1 bed / 2 baths / 730 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.835463"], ["zipcode", "02119"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Centre St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.837115"], ["price", "$2,750/mo"], ["size", " 2 beds / 2 baths / 1,030 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.837115"], ["zipcode", "02119"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Centre St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.838855"], ["price", "$3,175/mo"], ["size", " 3 beds / 2 baths / 1,230 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.838855"], ["zipcode", "02119"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Lambert St"], ["city", " Boston Fort Hill"], ["created_at", "2014-12-23 20:39:50.840502"], ["price", "$2,400/mo"], ["size", " 4 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.840502"], ["zipcode", "02119"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Washington St"], ["city", " Roxbury"], ["created_at", "2014-12-23 20:39:50.842091"], ["price", "$1,400/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.842091"], ["zipcode", "02119"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "20 Walnut Park UNIT 2"], ["city", " Roxbury"], ["created_at", "2014-12-23 20:39:50.843571"], ["price", "$339,000 "], ["size", " 3 beds / 2 baths / 1,484 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.843571"], ["zipcode", "02119"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Marcella St"], ["city", " Roxbury"], ["created_at", "2014-12-23 20:39:50.845001"], ["price", "$1,350/mo"], ["size", " 1 bed / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.845001"], ["zipcode", "02119"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Washington St"], ["city", " Roxbury"], ["created_at", "2014-12-23 20:39:50.846528"], ["price", "$1,600/mo"], ["size", " 1 bed / 1 bath / 600 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.846528"], ["zipcode", "02119"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "44 Alleghany St # 1F"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.848145"], ["price", "$5,600/mo"], ["size", " 6 beds / 2 baths "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.848145"], ["zipcode", "02120"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "993 Tremont St APT 3"], ["city", " Roxbury Crossing"], ["created_at", "2014-12-23 20:39:50.849686"], ["price", "$246,841,000 "], ["size", " 1 bed / 1 bath / 674 sqft "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.849686"], ["zipcode", "02120"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "154 Fisher Ave UNIT A"], ["city", " Roxbury Crossing"], ["created_at", "2014-12-23 20:39:50.851291"], ["price", "$315,000 "], ["size", " 1 bed / 1 bath / 1,060 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.851291"], ["zipcode", "02120"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Calumet St"], ["city", " Roxbury Crossing"], ["created_at", "2014-12-23 20:39:50.852896"], ["price", "$2,800/mo"], ["size", " 3 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.852896"], ["zipcode", "02120"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Sewall St"], ["city", " Boston"], ["created_at", "2014-12-23 20:39:50.854489"], ["price", "$6,000/mo"], ["size", " 6 beds / 4 baths / 2,800 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.854489"], ["zipcode", "02120"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Parker Hill Ave"], ["city", " Roxbury Crossing"], ["created_at", "2014-12-23 20:39:50.855961"], ["price", "$4,600/mo"], ["size", " 4 beds / 2 baths "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.855961"], ["zipcode", "02120"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Hillside St"], ["city", " Roxbury Crossing"], ["created_at", "2014-12-23 20:39:50.857486"], ["price", "$2,500/mo"], ["size", " 2 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.857486"], ["zipcode", "02120"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Hillside St"], ["city", " Roxbury Crossing"], ["created_at", "2014-12-23 20:39:50.859090"], ["price", "$3,600/mo"], ["size", " 3 beds / 1 bath / 1,000 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.859090"], ["zipcode", "02120"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address", "43 Elmont St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.860556"], ["size", " 4 beds / 2 baths / 2,661 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.860556"], ["zipcode", "02121"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "42-44 Hutchings St UNIT 1"], ["city", " BOSTON"], ["created_at", "2014-12-23 20:39:50.862241"], ["price", "$149,800 "], ["size", " 3 beds / 1 bath / 1,394 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.862241"], ["zipcode", "02121"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "63 Oldfields Rd"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.863749"], ["price", "$385,000 "], ["size", " 6 beds / 3 baths / 2,820 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.863749"], ["zipcode", "02121"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "5-7 Weldon St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.865440"], ["price", "$359,900 "], ["size", " 6 beds / 2 baths / 2,900 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.865440"], ["zipcode", "02121"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "126 Greenwood St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.867692"], ["price", "$459,000 "], ["size", " 9 beds / 3 baths / 3,492 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.867692"], ["zipcode", "02121"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "120 Greenwood St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.900683"], ["price", "$519,999 "], ["size", " 6 beds / 3 baths / 3,789 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.900683"], ["zipcode", "02121"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "23 Gaston St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.902585"], ["price", "$375,000 "], ["size", " 8 beds / 3 baths / 3,345 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.902585"], ["zipcode", "02121"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "Fowler St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.904513"], ["price", "$1,400/mo"], ["size", " 2 beds / 1 bath / 3,960 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.904513"], ["zipcode", "02121"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "Ruthven St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.906412"], ["price", "$1,750/mo"], ["size", " 3 beds / 1 bath "], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.906412"], ["zipcode", "02121"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "45 Bullard St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.908041"], ["price", "$429,000 "], ["size", " 9 beds / 3 baths / 4,601 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.908041"], ["zipcode", "02121"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "39 Howland St # 1"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.909849"], ["price", "$1,700/mo"], ["size", " 2 beds / 1 bath / 1,350 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.909849"], ["zipcode", "02121"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "24 Holborn St # 1A"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.911478"], ["price", "$204,900 "], ["size", " 3 beds / 1 bath / 1,200 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.911478"], ["zipcode", "02121"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address", "44 Quincy St APT 1"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.913014"], ["price", "$1,700/mo"], ["size", " 4 beds / 1 bath / 1,563 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.913014"], ["zipcode", "02121"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("address", "city", "created_at", "price", "size", "state", "updated_at", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["address", "30 Wolcott St"], ["city", " Dorchester"], ["created_at", "2014-12-23 20:39:50.914629"], ["price", "$549,000 "], ["size", " 8 beds / 4 baths / 3,633 sqft"], ["state", " MA"], ["updated_at", "2014-12-23 20:39:50.914629"], ["zipcode", "02121"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/houses
+Completed 302 Found in 422ms (ActiveRecord: 116.6ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2014-12-23 15:39:50 -0500
+Processing by HousesController#index as HTML
+  Rendered houses/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:51 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-23 15:39:51 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:51 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:51 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-23 15:39:51 -0500
