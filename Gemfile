@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'masonry-rails', '~> 0.2.4'
 gem 'searchkick'
 gem 'rails', '4.1.8'
 gem 'pg'
