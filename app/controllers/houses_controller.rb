@@ -1,4 +1,13 @@
 class HousesController < ApplicationController
+
+  def search
+    if params[:search].present?
+      @houses = House.search(params[:search])
+    else
+      @houses = House.all
+    end
+  end
+
   def index
   end
 
