@@ -18,7 +18,7 @@ group :test, :development do
   gem 'capybara'
   gem 'launchy'
   gem 'pry-rails'
-  gem 'bettererrors'
+  gem 'better_errors'
 end
 
 group :test do

@@ -3,7 +3,6 @@ class HousesController < ApplicationController
   def search
     if params[:search].present?
       @houses = House.search(params[:search])
-      redirect_to show_path
     else
       @houses = House.all
     end
