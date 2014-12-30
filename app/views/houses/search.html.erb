@@ -1,0 +1,11 @@
+<h1> House Listings</h1>
+
+<div class="row">
+  <% @houses.each do |house| %>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <%= house %>
+    </div>
+  </div>
+  <% end %>
+</div>
