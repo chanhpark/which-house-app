@@ -1,10 +1,37 @@
-<h2> Houses in the Boston Area and Bergen County, NJ! </h2>
+<div class="module">
+  <br />
+  <br />
+  <br />
+  <h1 class="text-center" style="color: white">Whichouse.ify</h1>
+  <h2 class="text-center" style="color:white"> The Journey to your next house! </h2>
+  <%= form_tag search_houses_path, method: :get, class: "body-form body-center", role: "search" do %>
+  <br />
+  <br />
+  <br />
+  <div class="text-center">
+    <p>
+      <%= text_field_tag :search, params[:search], class: "align-center" %>
+      <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+    </p>
+    <% end %>
+  </div>
+</div>
 
-
-
-<%= form_tag search_houses_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-<p>
-  <%= text_field_tag :search, params[:search], class: "form-control" %>
-  <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-</p>
-<% end %>
+<footer class="row">
+  <div class="large-10 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p> © Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-12 columns">
+        <ul class="form-inline">
+          <a class="inline" href="#">About</a>
+          <a class="inline" href="#">Careers</a>
+          <a class="inline" href="#">Site Map</a>
+          <a class="inline" href="#">Mission</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

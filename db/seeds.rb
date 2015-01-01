@@ -11,13 +11,13 @@ file = File.read('db/data/zillow_info.csv')
 csv = CSV.parse(file, :headers => true)
 
 csv.each do |row|
-  address = row.to_hash[:address]
+  address = row[:address]
   city = row[:city]
   state = row[:state]
   zipcode = row[:zipcode]
   size = row[:size]
   price = row[:price]
-  puts "We created a house with address of #{address}"
+  puts "We created a house with address of #{h}"
   House.create!(address: address,
                 city: city,
                 state: state,
