@@ -14419,3 +14419,223 @@ Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-01 17:21:59 
 
 
 Started GET "/assets/road.jpeg" for 127.0.0.1 at 2015-01-01 17:21:59 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-02 17:12:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HousesController#index as HTML
+  Rendered houses/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 125ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:12:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:03 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:03 -0500
+
+
+Started GET "/assets/road.jpeg" for 127.0.0.1 at 2015-01-02 17:12:03 -0500
+
+
+Started GET "/houses/search?utf8=%E2%9C%93&search=07650" for 127.0.0.1 at 2015-01-02 17:12:07 -0500
+Processing by HousesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"07650"}
+  [1m[33mHouse Search (55.5ms)[0m  curl http://localhost:9200/houses_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"07650","operator":"and","boost":10,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"07650","operator":"and","boost":10,"analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"07650","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"07650","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search2"}}}]}},"size":100000,"from":0,"fields":[]}'
+  [1m[35mHouse Load (2.8ms)[0m  SELECT "houses".* FROM "houses"  WHERE "houses"."id" IN (1783, 1788, 1790, 1795, 1782, 1787, 1794, 1799, 1784, 1789, 1791, 1796, 1779, 1781, 1786, 1793, 1798, 1801, 1778, 1780, 1785, 1792, 1797, 1800)
+  Rendered houses/search.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 182ms (Views: 39.0ms | Searchkick: 55.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:07 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:12:07 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:07 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:07 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-02 17:12:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HousesController#index as HTML
+  Rendered houses/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 117ms (Views: 116.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:12:38 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:38 -0500
+
+
+Started GET "/assets/road.jpeg" for 127.0.0.1 at 2015-01-02 17:12:38 -0500
+
+
+Started GET "/houses/search?utf8=%E2%9C%93&search=0765" for 127.0.0.1 at 2015-01-02 17:12:41 -0500
+Processing by HousesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"0765"}
+  [1m[33mHouse Search (36.6ms)[0m  curl http://localhost:9200/houses_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"0765","operator":"and","boost":10,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"0765","operator":"and","boost":10,"analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"0765","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"0765","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search2"}}}]}},"size":100000,"from":0,"fields":[]}'
+  [1m[35mHouse Load (0.9ms)[0m  SELECT "houses".* FROM "houses"  WHERE "houses"."id" IN (976, 1765, 765)
+  Rendered houses/search.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 135ms (Views: 80.0ms | Searchkick: 36.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:42 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:12:42 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:42 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:42 -0500
+
+
+Started GET "/houses/search?utf8=%E2%9C%93&search=07650" for 127.0.0.1 at 2015-01-02 17:12:49 -0500
+Processing by HousesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"07650"}
+  [1m[33mHouse Search (29.8ms)[0m  curl http://localhost:9200/houses_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"07650","operator":"and","boost":10,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"07650","operator":"and","boost":10,"analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"07650","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"07650","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search2"}}}]}},"size":100000,"from":0,"fields":[]}'
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT "houses".* FROM "houses"  WHERE "houses"."id" IN (1783, 1788, 1790, 1795, 1782, 1787, 1794, 1799, 1784, 1789, 1791, 1796, 1779, 1781, 1786, 1793, 1798, 1801, 1778, 1780, 1785, 1792, 1797, 1800)[0m
+  Rendered houses/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 57ms (Views: 25.7ms | Searchkick: 29.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:12:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:49 -0500
+
+
+Started GET "/houses/search?utf8=%E2%9C%93&search=765" for 127.0.0.1 at 2015-01-02 17:12:57 -0500
+Processing by HousesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"765"}
+  [1m[33mHouse Search (57.4ms)[0m  curl http://localhost:9200/houses_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"765","operator":"and","boost":10,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"765","operator":"and","boost":10,"analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"765","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"765","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search2"}}}]}},"size":100000,"from":0,"fields":[]}'
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"  WHERE "houses"."id" IN (765, 265, 1810, 465, 565, 1901, 365, 1477, 165, 1765, 1010, 624, 648, 1231, 1925, 1937, 702, 935, 665, 1520)
+  Rendered houses/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 120ms (Views: 27.2ms | Searchkick: 57.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:12:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:12:57 -0500
+
+
+Started GET "/houses/search?utf8=%E2%9C%93&search=765" for 127.0.0.1 at 2015-01-02 17:13:12 -0500
+Processing by HousesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"765"}
+  [1m[33mHouse Search (31.1ms)[0m  curl http://localhost:9200/houses_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"765","operator":"and","boost":10,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"765","operator":"and","boost":10,"analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"765","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"765","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search2"}}}]}},"size":100000,"from":0,"fields":[]}'
+  [1m[36mHouse Load (0.9ms)[0m  [1mSELECT "houses".* FROM "houses"  WHERE "houses"."id" IN (765, 265, 1810, 465, 565, 1901, 365, 1477, 165, 1765, 1010, 624, 648, 1231, 1925, 1937, 702, 935, 665, 1520)[0m
+  Rendered houses/search.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 27.9ms | Searchkick: 31.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:13:12 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:12 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:12 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:12 -0500
+
+
+Started GET "/houses/search?utf8=%E2%9C%93&search=park" for 127.0.0.1 at 2015-01-02 17:13:26 -0500
+Processing by HousesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"park"}
+  [1m[33mHouse Search (45.5ms)[0m  curl http://localhost:9200/houses_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"park","operator":"and","boost":10,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"park","operator":"and","boost":10,"analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"park","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"park","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search2"}}}]}},"size":100000,"from":0,"fields":[]}'
+  [1m[35mHouse Load (2.5ms)[0m  SELECT "houses".* FROM "houses"  WHERE "houses"."id" IN (620, 644, 1832, 1468, 656, 663, 808, 810, 815, 822, 827, 1179, 1181, 1186, 1193, 1198, 1028, 497, 593, 625, 632, 637, 649, 651, 1446, 1460, 1465, 1472, 1477, 1782, 1787, 1794, 1799, 1826, 1833, 1838, 1840, 1845, 2564, 2095, 2103, 2108, 2110, 1927, 1934, 1939, 1941, 1946, 1044, 482, 507, 824, 829, 622, 627, 634, 639, 641, 646, 653, 1183, 1188, 1190, 1195, 812, 817, 658, 660, 665, 2097, 2100, 2105, 2112, 1758, 1784, 1789, 1791, 1796, 1828, 1830, 1835, 1842, 1462, 1467, 1474, 1479, 1481, 1847, 1924, 1929, 1931, 1936, 1943, 2580, 655, 662, 667, 807, 814, 819, 1015, 509, 624, 629, 631, 636, 643, 648, 650, 821, 826, 2020, 2094, 2099, 2102, 2107, 2114, 1774, 1779, 1781, 1786, 1793, 1798, 1801, 1837, 1438, 1464, 1469, 1471, 1476, 1844, 1849, 1926, 1933, 1938, 1940, 1945, 1180, 1185, 1192, 1197, 1200, 813, 818, 820, 825, 166, 1002, 623, 628, 630, 635, 642, 647, 654, 659, 661, 666, 438, 503, 1463, 1470, 1475, 1482, 1925, 1932, 1937, 1944, 1778, 1780, 1785, 1792, 1797, 1800, 1829, 1831, 1836, 1843, 1848, 1850, 1881, 1184, 1189, 1191, 1196, 2093, 2098, 2101, 2106, 2113, 284, 311, 140, 657, 664, 695, 772, 568, 621, 626, 633, 638, 640, 645, 652, 13, 811, 816, 823, 828, 784, 2267, 1461, 1466, 1473, 1478, 1480, 1783, 1788, 1790, 1795, 1827, 1834, 1839, 1841, 1182, 1187, 1194, 1199, 2091, 2096, 2104, 2109, 2111, 1923, 1928, 1930, 1935, 1942, 2421, 2092, 809, 1846, 2125)
+  Rendered houses/search.html.erb within layouts/application (75.7ms)
+Completed 200 OK in 145ms (Views: 95.4ms | Searchkick: 45.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:13:26 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:26 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:26 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:26 -0500
+
+
+Started GET "/houses/search?utf8=%E2%9C%93&search=07603" for 127.0.0.1 at 2015-01-02 17:13:44 -0500
+Processing by HousesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"07603"}
+  [1m[33mHouse Search (31.8ms)[0m  curl http://localhost:9200/houses_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"07603","operator":"and","boost":10,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"07603","operator":"and","boost":10,"analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"07603","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"07603","operator":"and","boost":1,"fuzziness":1,"max_expansions":3,"analyzer":"searchkick_search2"}}}]}},"size":100000,"from":0,"fields":[]}'
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT "houses".* FROM "houses"  WHERE "houses"."id" IN (577, 573, 578, 580, 585, 592, 570, 575, 582, 587, 594, 572, 584, 589, 591, 574, 579, 581, 586, 593, 571, 576, 583, 588, 590)[0m
+  Rendered houses/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 101ms (Views: 67.8ms | Searchkick: 31.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-02 17:13:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-02 17:13:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20150107010927)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (40.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150107010927"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToUsersTable (20150107011004)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (10.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "role" integer DEFAULT 1 NOT NULL[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150107011004"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddColumnToUsersTable (20150107011004)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "users" DROP "role"
+  [1m[36mSQL (1.9ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20150107011004'[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnToUsersTable (20150107011004)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (6.9ms)[0m  [1mALTER TABLE "users" ADD COLUMN "role" integer DEFAULT 1 NOT NULL[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150107011004"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
